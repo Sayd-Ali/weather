@@ -5,12 +5,12 @@ import Highligts from "./components/Highligts.vue";
 import { API_KEY, BASE_URL } from "./constants";
 
 const CITY = ref('Paris');
-const wetherInfo = ref(null);
+const weatherInfo = ref(null);
 
 function getWeather(){
-  fetch(`${BASE_URL}?q=${CITY.value}&appid=${API_KEY}`)
+  fetch(`${BASE_URL}?q=${CITY.value}&units=metric&appid=${API_KEY}`)
     .then((resp) => resp.json())
-    .then((data) => wetherInfo.value = data)
+    .then((data) => weatherInfo.value = data)
 }
 
 onMounted(getWeather)
@@ -32,7 +32,7 @@ onMounted(getWeather)
                       @keyup.enter="getWeather"
                   >
                 </div>
-                <WeatherSummary />
+                <WeatherSummary :weatherInfo="weatherInfo" />
               </div>
             </section>
             <section class="section section-right">

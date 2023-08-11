@@ -3,11 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --open",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/vue": "^2.0.0",
+    "node-type": "^1.1.1",
+    "typescript": "^5.1.6",
     "vue": "^3.3.4"
   },
   "devDependencies": {
